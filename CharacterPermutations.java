@@ -1,16 +1,17 @@
 public class CharacterPermutations {
 
     public static void main(String[] args) {
-        permuteString("abcd");
+        CharacterPermutations c = new CharacterPermutations();
+        c.permutation("abcd");
     }
 
-    static void permuteString(String s) {
-        int len = s.length();
-        for(int i = 0; i < len; i++) {
-            for(int x = 0; x < len; x++) {
-                if(!(s.charAt(i) == (s.charAt(x)))) System.out.print(s.charAt(x));
-            }
-            System.out.println();
-        }
+    private void permutation(String str) { permutation("", str); }
+
+    private void permutation(String prefix, String str) {
+        int n = str.length();
+        if(n == 0) System.out.println(prefix);
+        else
+            for(int i = 0; i < n; i++)
+                permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n));
     }
 }
