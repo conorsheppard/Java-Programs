@@ -1,4 +1,12 @@
-I have implemented two forms of tree traversal. 
+**Task: Word Chain Solver**
+
+Word chains are a simple game often found in the games and puzzles section of newspapers. The aim of the game is to get from one word to another by changing one letter of the word each time. Each change of letter must result in a legal intermediate word. For example, we can change LEAD into GOLD through the following steps:
+
+	LEAD → LOAD → GOAD → GOLD
+
+Using Java, create an automated solver method that accepts the start and end words and prints a list of steps required to do the transform. There’s a dictionary of legal words to use in your solver in this zip file. You can assume the dictionary will be in the same directory as your executable. Start and end words should be the same length as each other.
+
+To solve this problem I have implemented two forms of tree traversal.
 
 - Breadth First Search, using a Dijkstra-like algorithm to record all the nodes one level down (i.e. one change in letter) from the current node, starting with the first node at level 0.
 
